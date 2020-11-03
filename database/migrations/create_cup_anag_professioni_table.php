@@ -17,7 +17,8 @@ class CreateCupAnagProfessioniTable extends Migration {
 		Schema::create('cup_anag_professioni', function(Blueprint $table)
 		{
             $table->increments('id');
-			$table->string('nome_it')->unique();
+            $table->string('codice')->unique();
+            $table->string('nome_it',255)->unique();
 			$table->nullableTimestamps();
 			$table->nullableOwnerships();
 

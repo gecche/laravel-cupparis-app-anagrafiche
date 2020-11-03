@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Models\CupAnagProfessione;
 use App\Models\CupAnagStatoCivile;
 
-class NatureGiuridicheTableSeeder extends Seeder
+class CupAnagNatureGiuridicheTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

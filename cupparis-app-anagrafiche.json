@@ -2,22 +2,22 @@
   "foorm": {
     "entities": [
       "cup_anag_natura_giuridica",
-//      "cup_anag_professioni",
-//      "cup_anag_stati_civili"
+      "cup_anag_professioni",
+      "cup_anag_stati_civili"
     ]
   },
   "modelconfs": {
     "files": [
       "CupGeoNaturaGiuridica.js",
-//      "CupGeoProfessione.js",
-//      "CupGeoStatoCivile.js"
+      "CupGeoProfessione.js",
+      "CupGeoStatoCivile.js"
     ]
   },
   "permissions": {
     "models": [
       "cup_anag_natura_giuridica",
-//      "cup_anag_professioni",
-//      "cup_anag_stati_civili",
+      "cup_anag_professioni",
+      "cup_anag_stati_civili"
     ],
     "other_permissions": {
       "web": [
@@ -27,14 +27,14 @@
   "policies": {
     "models": {
       "\\App\\Models\\CupGeoNaturaGiuridica": "\\App\\Policies\\CupGeoNaturaGiuridicaPolicy",
-//      "\\App\\Models\\CupGeoProfessione": "\\App\\Policies\\CupGeoProfessionePolicy",
-//      "\\App\\Models\\CupGeoStatoCivile": "\\App\\Policies\\CupGeoStatoCivilePolicy"
+      "\\App\\Models\\CupGeoProfessione": "\\App\\Policies\\CupGeoProfessionePolicy",
+      "\\App\\Models\\CupGeoStatoCivile": "\\App\\Policies\\CupGeoStatoCivilePolicy"
     }
   },
   "models": [
     "CupGeoNaturaGiuridica",
-//    "CupGeoProfessione",
-//    "CupGeoStatoCivile"
+    "CupGeoProfessione",
+    "CupGeoStatoCivile"
   ],
   "datafile-models": [
 //    "CupGeoComuniIstat",
