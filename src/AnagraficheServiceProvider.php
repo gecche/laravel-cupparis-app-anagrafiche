@@ -43,11 +43,11 @@ class AnagraficheServiceProvider extends ServiceProvider
 //            __DIR__ . '/../app/Http/Kernel.php' => app_path('Http/Kernel.php'),
         ], 'models');
 
-        $this->publishes([
-            __DIR__ . '/../app/DatafileModels' => app_path('DatafileModels'),
-            __DIR__ . '/../app/DatafileProviders' => app_path('DatafileProviders'),
-//            __DIR__ . '/../app/Models/Relations' => app_path('Models/Relations'),
-        ], 'datafile-models');
+//        $this->publishes([
+//            __DIR__ . '/../app/DatafileModels' => app_path('DatafileModels'),
+//            __DIR__ . '/../app/DatafileProviders' => app_path('DatafileProviders'),
+////            __DIR__ . '/../app/Models/Relations' => app_path('Models/Relations'),
+//        ], 'datafile-models');
 
 
         if ($this->app->runningInConsole()) {
@@ -57,6 +57,7 @@ class AnagraficheServiceProvider extends ServiceProvider
                     __DIR__ . '/../database/migrations/create_cup_anag_nature_giuridiche_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-79) . '_create_cup_anag_nature_giuridiche_table.php'),
                     __DIR__ . '/../database/migrations/create_cup_anag_stati_civili_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-79) . '_create_cup_anag_stati_civili_table.php'),
                     __DIR__ . '/../database/migrations/create_cup_anag_professioni_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-79) . '_create_cup_anag_professioni_table.php'),
+                    __DIR__ . '/../database/migrations/create_cup_anag_anagrafiche_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-75) . '_create_cup_anag_anagrafiche_table.php'),
                     // you can add any number of migrations here
                 ], 'migrations');
             }
@@ -72,14 +73,14 @@ class AnagraficheServiceProvider extends ServiceProvider
 //        }
         //Publishing and overwriting databases folders
         $this->publishes([
-            __DIR__ . '/../database/dump' => database_path('dump'),
+//            __DIR__ . '/../database/dump' => database_path('dump'),
             __DIR__ . '/../database/seeds' => database_path('seeds'),
         ], 'db');
 
         //Publishing and overwriting resources folders
         $this->publishes([
 //            __DIR__ . '/../resources/documenti' => base_path('resources/documenti'),
-            __DIR__ . '/../resources/lang' => base_path('resources/lang'),
+//            __DIR__ . '/../resources/lang' => base_path('resources/lang'),
 //            __DIR__ . '/../resources/views/bootstrap4/includes' => base_path('resources/views/bootstrap4/includes'),
         ], 'models-confs');
 
