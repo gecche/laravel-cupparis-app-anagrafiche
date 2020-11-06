@@ -42,10 +42,8 @@
     "CupAnagStatoCivile"
   ],
   "datafile-models": [
-//    "CupAnagComuniIstat",
   ],
   "datafile-providers": [
-//    "CupAnagComuniIstatXls",
   ],
   "pages": [
     "tabanagmisc.html"
@@ -55,10 +53,9 @@
   ],
   "database": {
     "seeds": [
-//      "CupAnagSeeder"
+      "CupAnagSeeder"
     ],
     "dump": [
-//      "cup_anag_seed_20201030"
     ]
   }
 }
