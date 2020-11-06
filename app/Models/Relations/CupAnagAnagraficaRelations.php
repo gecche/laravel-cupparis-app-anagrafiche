@@ -41,5 +41,15 @@ trait CupAnagAnagraficaRelations
 
     }
 
+    public function rapplegale() {
 
+        return $this->belongsTo(\App\Models\CupAnagAnagrafica::class, 'rapplegale_id', null, null);
+
+    }
+
+    public function stato_civile() {
+
+        return $this->belongsTo(\App\Models\CupAnagStatoCivile::class, 'stato_civile_id', null, null);
+
+    }
 }
