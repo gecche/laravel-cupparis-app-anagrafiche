@@ -45,6 +45,9 @@ class CreateCupAnagAnagraficheTable extends Migration
             $table->integer('naturagiuridica_id')->unsigned()->index()->nullable()->default(null);// varchar(4) DEFAULT NULL,
             $table->foreign('naturagiuridica_id')->references('id')->on('cup_anag_nature_giuridiche')
                 ->onDelete('restrict')->onUpdate('cascade');
+            $table->integer('rapplegale_id')->unsigned()->index()->nullable()->default(null);// varchar(4) DEFAULT NULL,
+            $table->foreign('rapplegale_id')->references('id')->on('cup_anag_anagrafiche')
+                ->onDelete('restrict')->onUpdate('cascade');
 
             //PERSONA FISICA
             $table->enum('sesso', ['F', 'M'])->nullable()->default(null);
@@ -58,8 +61,8 @@ class CreateCupAnagAnagraficheTable extends Migration
             $table->string('indirizzo')->nullable()->default(null);
             $table->string('cap',5)->nullable()->default(null);
             $table->integer('comuneresidenza_id')->unsigned()->index()->nullable()->default(null);// varchar(4) DEFAULT NULL,
-            $table->foreign('comuneresidenza_id')->references('id')->on('comuni')
-                ->onDelete('set null')->onUpdate('cascade');
+            $table->foreign('comuneresidenza_id')->references('id')->on('cup_geo_comuni')
+                ->onDelete('restrict')->onUpdate('cascade');
             $table->string('localita')->nullable()->default(null);
             $table->string('numero_civico')->nullable()->default(null);
             $table->integer('nazione_id')->unsigned()->index()->nullable()->default(null);// varchar(4) DEFAULT NULL,
