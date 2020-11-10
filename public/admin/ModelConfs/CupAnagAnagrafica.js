@@ -98,6 +98,11 @@ var ModelCupAnagAnagrafica = {
 
 //PERSONA GIURIDICA
             'naturagiuridica_id',
+            'rapplegale_id',
+            'id',
+            'cognome',
+            'nome',
+            'codice_fiscale',
 
 //PERSONA FISICA
             'sesso',
@@ -120,9 +125,9 @@ var ModelCupAnagAnagrafica = {
 
             'note',
 //ALTRE INFO UTILI A UNA CERTA APP (JSON)
-            'app_info',
+//             'app_info',
 
-            'organizzazione',
+            // 'organizzazione',
 
             'attivo',
 //'comuni'
@@ -130,25 +135,38 @@ var ModelCupAnagAnagrafica = {
         fieldsConfig : {
 
             'fisicagiuridica' : {
-                type: 'w-select',
+                type: 'w-radio',
+                template: "tpl-full-no",
+                //inputType: 'date',
             },
             'nazionalita_id' : {
                 type: 'w-select',
+                css : 'fisica',
             },
             'naturagiuridica_id' : {
                 type: 'w-select',
+                css : 'giuridica',
             },
             'professione_id' : {
                 type: 'w-select',
+                css : 'fisica',
             },
             'stato_civile_id' : {
                 type: 'w-select',
+                css : 'fisica',
             },
-            'organizzazione' : {
+            'sesso' : {
                 type: 'w-select',
+                css : 'fisica',
             },
+            // 'organizzazione' : {
+            //     type: 'w-select',
+            // },
             'attivo' : {
                 type: 'w-select',
+            },
+            'note' : {
+                type: 'w-textarea',
             },
 
             'comunenascita_id' : {
@@ -164,8 +182,29 @@ var ModelCupAnagAnagrafica = {
                 labelFields: [
                     'nome_it',
                     'sigla_provincia',
+                    'nazione|codice_iso_3'
                 ],
                 //url : null,
+                methods: {
+                    getLabel: function (value) {
+                        var that = this;
+                        //console.log('getLabel value',value);
+                        if (!value || Object.keys(value).length == 0) {
+                            return 'Seleziona...';
+                        }
+                        return value['nome_it']
+                            + " (" + value['sigla_provincia'] + ")"
+                            + " - " + value['nazione|codice_iso_3'];
+                        // codice originale
+                        // var label = "";
+                        // for (var i in that.fields) {
+                        //     label += value[that.fields[i]] + " ";
+                        // }
+                        // return label;
+                    },
+
+
+                },
             },
             'comuneresidenza_id' : {
                 type: "w-b2-select2",
@@ -180,7 +219,53 @@ var ModelCupAnagAnagrafica = {
                 labelFields: [
                     'nome_it',
                     'sigla_provincia',
+                    'nazione|codice_iso_3'
                 ],
+                methods: {
+                    getLabel: function (value) {
+                        var that = this;
+                        //console.log('getLabel value',value);
+                        if (!value || Object.keys(value).length == 0) {
+                            return 'Seleziona...';
+                        }
+                        return value['nome_it']
+                            + " (" + value['sigla_provincia'] + ")"
+                            + " - " + value['nazione|codice_iso_3'];
+                    },
+
+
+                },
+            },
+            'rapplegale_id' : {
+                type: "w-b2-select2",
+                defaultValue: {
+                    id: -1,
+                    text: 'Seleziona...'
+                },
+                theme: 'bootstrap4',
+                allowClear: true,
+                foormName: 'cup_anag_anagrafica',
+                viewType: 'edit',
+                labelFields: [
+                    'id',
+                    'cognome',
+                    'nome',
+                    'codice_fiscale',
+                ],
+                // methods: {
+                //     getLabel: function (value) {
+                //         var that = this;
+                //         //console.log('getLabel value',value);
+                //         if (!value || Object.keys(value).length == 0) {
+                //             return 'Seleziona...';
+                //         }
+                //         return value['nome_it']
+                //             + " (" + value['sigla_provincia'] + ")"
+                //             + " - " + value['nazione|codice_iso_3'];
+                //     },
+                //
+                //
+                // },
             },
         }
     }

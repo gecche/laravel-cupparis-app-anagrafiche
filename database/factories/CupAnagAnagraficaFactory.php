@@ -52,7 +52,7 @@ $factory->define(App\Models\CupAnagAnagrafica::class, function (Faker $faker) {
         $alias = $fakerIt->company;
         $codiceFiscale = rand(0, 100) > 90 ? $fakerIt->taxId() : null;
         $partitaIva = $codiceFiscale ?: $fakerIt->vatId();
-        $partitaIva = strlen($partitaIva) > 11 ? substr($partitaIva, 0, 11) : $partitaIva;
+        $partitaIva = strlen($partitaIva) > 11 ? substr($partitaIva, 2, 11) : $partitaIva;
         $datanascita = $fakerIt->dateTimeBetween('-50 years', '-6 months')->format('Y-m-d');
         $sesso = null;
 
@@ -109,7 +109,7 @@ $factory->define(App\Models\CupAnagAnagrafica::class, function (Faker $faker) {
 
 
         'organizzazione' => 0,
-        'attivo' => rand(1, 100) > 98 ? 1 : 0,
+        'attivo' => rand(1, 100) > 98 ? 0 : 1,
 
     ];
 });

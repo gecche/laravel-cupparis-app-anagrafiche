@@ -100,6 +100,37 @@ return [
 
 
     'edit' => [
+        'actions' => [
+            'autocomplete' => [
+                'fields' => [
+                    'comunenascita_id' => [
+                        'model' => 'CupGeoComune',
+                        'result_fields' => [
+                            'nome_it',
+                            'sigla_provincia',
+                            'nazione|codice_iso_3',
+                        ]
+                    ],
+                    'comuneresidenza_id' => [
+                        'model' => 'CupGeoComune',
+                        'result_fields' => [
+                            'nome_it',
+                            'sigla_provincia',
+                            'nazione|codice_iso_3',
+                        ]
+                    ],
+                    'rapplegale_id' => [
+                        'model' => 'CupAnagAnagrafica',
+                        'result_fields' => [
+                            'id',
+                            'cognome',
+                            'nome',
+                            'codice_fiscale',
+                        ]
+                    ]
+                ],
+            ],
+        ],
         'fields' => [
             'id' => [],
 
@@ -118,7 +149,12 @@ return [
 
             'datanascita' => [],
 
-            'comunenascita_id' => [],
+            'comunenascita_id' => [
+                'referred_data' => 'method:model',
+            ],
+            'rapplegale_id' => [
+//                'referred_data' => 'method:model',
+            ],
 
             'nazionalita_id' => [
                 'options' => 'relation:nazionalita'
@@ -141,7 +177,7 @@ return [
             'indirizzo' => [],
             'cap' => [],
             'comuneresidenza_id' => [
-//                'options' => 'relation:comuenresidenza'
+                'referred_data' => 'method:model',
             ],
 
             'localita' => [],

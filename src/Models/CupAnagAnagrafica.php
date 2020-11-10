@@ -74,11 +74,37 @@ class CupAnagAnagrafica extends Breeze {
     //['cognome' => 'ASC','nome' => 'ASC'];
 
     public $columnsSearchAutoComplete = ['id','denominazione'];
-    //['cognome','denominazione','codicefiscale','partitaiva'];
 
     public $nItemsAutoComplete = 20;
     public $nItemsForSelectList = 100;
     public $itemNoneForSelectList = false;
     public $fieldsSeparator = ' - ';
 
+    protected function createReferredDataComune($relationName)
+    {
+        $relationNameId = $relationName . '_id';
+        if ($this->getKey() && $this->$relationNameId) {
+            return [
+                'nome_it' => $this->$relationName->nome_it,
+                'sigla_provincia' => $this->$relationName->sigla_provincia,
+                'nazione|codice_iso_3' => $this->$relationName->nazione_id
+                    ? $this->$relationName->nazione->codice_iso_3 : 'ITA',
+            ];
+        }
+        return [
+            'nome_it' => null,
+            'sigla_provincia' => null,
+            'nazione|codice_iso_3' => null,
+        ];
+    }
+
+    public function createReferredDataComuneresidenzaId()
+    {
+        return $this->createReferredDataComune('comuneresidenza');
+    }
+
+    public function createReferredDataComunenascitaId()
+    {
+        return $this->createReferredDataComune('comunenascita');
+    }
 }
