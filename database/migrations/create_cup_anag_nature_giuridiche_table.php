@@ -17,7 +17,7 @@ class CreateCupAnagNatureGiuridicheTable extends Migration {
 		{
 		    $table->increments('id');
             $table->string('codice')->unique();
-            $table->string('nome_it',255)->unique();
+            $table->string('nome_it');
             $table->boolean('soggetti_residenti')->default(1);
 
             $table->nullableOwnerships();

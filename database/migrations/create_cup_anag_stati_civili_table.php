@@ -18,7 +18,7 @@ class CreateCupAnagStatiCiviliTable extends Migration {
 		{
             $table->increments('id');
             $table->string('codice')->unique();
-            $table->string('nome_it',255)->unique();
+            $table->string('nome_it')->unique();
 			$table->nullableTimestamps();
 			$table->nullableOwnerships();
 

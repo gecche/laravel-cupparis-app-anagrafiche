@@ -1,61 +1,67 @@
 {
-  "foorm": {
-    "entities": [
-      "cup_anag_anagrafica",
-      "cup_anag_natura_giuridica",
-      "cup_anag_professioni",
-      "cup_anag_stati_civili"
-    ]
-  },
-  "modelconfs": {
-    "files": [
-      "CupAnagAnagrafica.js",
-      "CupAnagNaturaGiuridica.js",
-      "CupAnagProfessione.js",
-      "CupAnagStatoCivile.js"
-    ]
-  },
-  "permissions": {
+    "foorm": {
+        "entities": [
+            "cup_anag_anagrafica",
+            "cup_anag_natura_giuridica",
+            "cup_anag_professione",
+            "cup_anag_stato_civile"
+        ]
+    },
+    "modelconfs": {
+        "files": [
+            "CupAnagAnagrafica.js",
+            "CupAnagNaturaGiuridica.js",
+            "CupAnagProfessione.js",
+            "CupAnagStatoCivile.js"
+        ]
+    },
+    "permissions": {
+        "models": [
+            "cup_anag_anagrafica",
+            "cup_anag_natura_giuridica",
+            "cup_anag_professioni",
+            "cup_anag_stati_civili"
+        ],
+        "other_permissions": {
+            "web": [
+            ]
+        }
+    },
+    "policies": {
+        "models": {
+            "\\App\\Models\\CupAnagAnagrafica": "\\App\\Policies\\CupAnagAnagraficaPolicy",
+            "\\App\\Models\\CupAnagNaturaGiuridica": "\\App\\Policies\\CupAnagNaturaGiuridicaPolicy",
+            "\\App\\Models\\CupAnagProfessione": "\\App\\Policies\\CupAnagProfessionePolicy",
+            "\\App\\Models\\CupAnagStatoCivile": "\\App\\Policies\\CupAnagStatoCivilePolicy"
+        }
+    },
     "models": [
-      "cup_anag_anagrafica",
-      "cup_anag_natura_giuridica",
-      "cup_anag_professioni",
-      "cup_anag_stati_civili"
+        "CupAnagAnagrafica",
+        "CupAnagNaturaGiuridica",
+        "CupAnagProfessione",
+        "CupAnagStatoCivile"
     ],
-    "other_permissions": {
-      "web": [
-      ]
-    }
-  },
-  "policies": {
-    "models": {
-      "\\App\\Models\\CupAnagAnagrafica": "\\App\\Policies\\CupAnagAnagraficaPolicy",
-      "\\App\\Models\\CupAnagNaturaGiuridica": "\\App\\Policies\\CupAnagNaturaGiuridicaPolicy",
-      "\\App\\Models\\CupAnagProfessione": "\\App\\Policies\\CupAnagProfessionePolicy",
-      "\\App\\Models\\CupAnagStatoCivile": "\\App\\Policies\\CupAnagStatoCivilePolicy"
-    }
-  },
-  "models": [
-    "CupAnagAnagrafica",
-    "CupAnagNaturaGiuridica",
-    "CupAnagProfessione",
-    "CupAnagStatoCivile"
-  ],
-  "datafile-models": [
-  ],
-  "datafile-providers": [
-  ],
-  "pages": [
-    "tabanagmisc.html"
-  ],
-  "config": [
-    "cupparis-app-anagrafiche"
-  ],
-  "database": {
-    "seeds": [
-      "CupAnagSeeder"
+    "datafile-models": [
     ],
-    "dump": [
-    ]
-  }
+    "datafile-providers": [
+    ],
+    "pages": [
+        "tabanagmisc.html"
+    ],
+    "config": [
+        "cupparis-app-anagrafiche"
+    ],
+    "database": {
+        "seeds": [
+            "CupAnagNatureGiuridicheTableSeeder",
+            "CupAnagProfessioniTableSeeder",
+            "CupAnagStatiCiviliTableSeeder",
+            "CupAnagSeeder"
+        ],
+        "factories": [
+            "CupAnagAnagraficaFactory"
+        ],
+        "dump": [
+        ]
+    }
 }

@@ -75,6 +75,7 @@ class AnagraficheServiceProvider extends ServiceProvider
         $this->publishes([
 //            __DIR__ . '/../database/dump' => database_path('dump'),
             __DIR__ . '/../database/seeds' => database_path('seeds'),
+            __DIR__ . '/../database/factories' => database_path('factories'),
         ], 'db');
 
         //Publishing and overwriting resources folders
