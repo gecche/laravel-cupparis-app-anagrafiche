@@ -1,4 +1,7 @@
 var ModelCupAnagAnagrafica = {
+    listEdit : {
+
+    },
     search: {
         modelName: 'cup_anag_anagrafica',
         //langContext : 'user',
@@ -75,6 +78,7 @@ var ModelCupAnagAnagrafica = {
         }
     },
     edit: {
+        cRef : 'vEditAnag',
         modelName: 'cup_anag_anagrafica',
         actions: ['action-save', 'action-back'],
         fields: [
@@ -137,6 +141,12 @@ var ModelCupAnagAnagrafica = {
             'fisicagiuridica' : {
                 type: 'w-radio',
                 template: "tpl-full-no",
+                methods : {
+                    change : function() {
+                        var that = this;
+                        that.$crud.cRefs.vEditAnag.fisicaGiuridicaValue = that.getValue();
+                    }
+                }
                 //inputType: 'date',
             },
             'nazionalita_id' : {
