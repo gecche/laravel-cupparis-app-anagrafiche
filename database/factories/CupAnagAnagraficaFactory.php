@@ -27,7 +27,6 @@ $factory->define(App\Models\CupAnagAnagrafica::class, function (Faker $faker) {
     $countAnagrafiche = \App\Models\CupAnagAnagrafica::count();
 
     $naturaGiuridicaId = null;
-    $rappLegaleId = null;
 
     $professioneId = null;
     $statoCivileId = null;
@@ -58,7 +57,6 @@ $factory->define(App\Models\CupAnagAnagrafica::class, function (Faker $faker) {
         $sesso = null;
 
         $naturaGiuridicaId = rand(0, 100) > 10 ? rand(1, $countNatureGiuridiche) : null;
-        $rappLegaleId = rand(0, 100) > 75 ? rand(1, $countAnagrafiche) : null;
     }
 
     $comuneNascitaId =  rand(1, $countComuni);
@@ -88,7 +86,7 @@ $factory->define(App\Models\CupAnagAnagrafica::class, function (Faker $faker) {
         'nazionalita_id' => $nazioneNascitaId,
 
         'naturagiuridica_id' => $naturaGiuridicaId,
-        'rapplegale_id' => $rappLegaleId,
+        'rapplegale_id' => null,
 
         'sesso' => $sesso,
         'professione_id' => $professioneId,
