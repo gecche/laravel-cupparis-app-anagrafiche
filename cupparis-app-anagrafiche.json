@@ -48,6 +48,9 @@
     "pages": [
         "tabanagmisc.html"
     ],
+    "components": [
+        "v-edit-anagrafica"
+    ],
     "config": [
         "cupparis-app-anagrafiche"
     ],

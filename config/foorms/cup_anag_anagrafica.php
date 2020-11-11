@@ -135,7 +135,8 @@ return [
             'id' => [],
 
             'fisicagiuridica' => [
-                'options' => 'dboptions'
+                'options' => 'dboptions',
+                'nulloption' => false,
             ],
 
             'denominazione' => [],

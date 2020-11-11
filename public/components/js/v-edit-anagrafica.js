@@ -48,6 +48,11 @@ crud.components.vEditAnagrafica = Vue.component('v-edit-anagrafica', {
                 default :
                     return {};
             }
+        },
+        completed: function () {
+            //console.log('telefonata insert',this._uid);
+            this.fisicaGiuridicaValue = this.value.fisicagiuridica;
+
         }
         // getFisicaGiuridicaValue : function () {
         //     var that = this;

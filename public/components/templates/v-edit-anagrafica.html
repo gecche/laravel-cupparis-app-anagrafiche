@@ -11,31 +11,48 @@
             </template>
             <div class="row">
 
-                <v-widget :c-widget="widgets.fisicagiuridica"></v-widget>
 
-                <div class="col col-12" v-show="fisicaGiuridicaValue === 'F'">
-                    <v-widget v-for="(widget, key) in getFisicaGiuridicaWidgets('F')" :v-key="key" :c-widget="widget"></v-widget>
-                </div>
-                <div class="col col-12" v-show="fisicaGiuridicaValue === 'G'">
-                    <v-widget v-for="(widget, key) in getFisicaGiuridicaWidgets('G')" :v-key="key" :c-widget="widget"></v-widget>
-                </div>
+                <w-radio :c-conf="widgets.fisicagiuridica" inline-template>
+                    <div class="col-12 mb-2 form-label-group">
+                        <div class="bw--1 border-solid border-gray-400 p--6 rounded">
 
-                <!--<w-radio :c-conf="widgets.fisicagiuridica" inline-template>-->
-                    <!--<div class="col-12 mb-2 form-label-group">-->
-                        <!--<div class="bw&#45;&#45;1 border-solid border-gray-400 p&#45;&#45;6 rounded">-->
-                            <!--pippo-->
-                            <!--<label v-for="key in domainValuesOrder" class="form-radio">-->
-                                <!--<input v-bind:name="getFieldName()" type="radio" :value="key"-->
-                                       <!--v-model="value"-->
-                                       <!--v-bind:c-marker="cMarker" v-on:change="change">-->
-                                <!--<i></i>{{domainValues[key]}}-->
-                            <!--</label>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</w-radio>-->
+                            Persona fisica/giuridica:
+                            <label v-for="key in domainValuesOrder" class="form-radio">
+                                <input v-bind:name="getFieldName()" type="radio" :value="key"
+                                       v-model="value"
+                                       v-bind:c-marker="cMarker" v-on:change="change">
+                                <i class=""></i>
+                                <span>
+                                    <i v-if="key == 'F'" class="fa fa-user"></i>
+                                    <i v-else class="fa fa-briefcase"></i>
+                                    {{domainValues[key]}}
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </w-radio>
                 <!--<v-widget v-for="(widget, key) in widgets" :c-widget="widget" v-if="!isHiddenField(key)"></v-widget>-->
+                <!--<v-widget :c-widget="widgets.fisicagiuridica"></v-widget>-->
 
             </div>
+
+            <div v-show="fisicaGiuridicaValue === 'F'">
+                <div>
+
+
+                    <div class="row separatorHr">pippo</div>
+
+                    <div class="row">
+                        <v-widget v-for="(widget, key) in getFisicaGiuridicaWidgets('F')" :v-key="key" :c-widget="widget"></v-widget>
+                    </div>
+                </div>
+            </div>
+            <div class="row" v-show="fisicaGiuridicaValue === 'G'">
+                <v-widget v-for="(widget, key) in getFisicaGiuridicaWidgets('G')" :v-key="key" :c-widget="widget"></v-widget>
+            </div>
+
+
+
         </form>
         <div v-html="beforeActions"></div>
         <div class="p-3" v-show="actions.length">
