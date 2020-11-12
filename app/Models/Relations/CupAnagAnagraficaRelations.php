@@ -52,4 +52,10 @@ trait CupAnagAnagraficaRelations
         return $this->belongsTo(\App\Models\CupAnagStatoCivile::class, 'stato_civile_id', null, null);
 
     }
+
+    public function contatti() {
+
+        return $this->hasMany(\App\Models\CupAnagContatto::class, 'anagrafica_id');
+
+    }
 }

@@ -22,7 +22,7 @@ class CupAnagSeeder extends Seeder
             $nContatti = rand(0,100) > 40 ? rand(1,8) : 0;
 
             if ($nContatti > 0) {
-                $anagrafica->contatti()->save(factory(App\Contact::class, $nContatti)->make());
+                $anagrafica->contatti()->save(factory(\App\Models\CupAnagContatto::class, $nContatti)->make());
             }
         });
 

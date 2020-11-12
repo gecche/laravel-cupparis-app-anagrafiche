@@ -4,7 +4,7 @@ use Gecche\Breeze\Facades\Schema;
 use Gecche\Breeze\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCupAnagAnagraficheTable extends Migration
+class CreateCupAnagContattiTable extends Migration
 {
 
     /**

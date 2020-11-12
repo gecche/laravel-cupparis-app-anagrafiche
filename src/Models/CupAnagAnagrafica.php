@@ -3,6 +3,7 @@
 namespace Gecche\Cupparis\App\Anagrafiche\Models;
 
 use App\Models\Attachment;
+use App\Models\CupAnagContatto;
 use App\Models\CupAnagNaturaGiuridica;
 use App\Models\CupAnagProfessione;
 use App\Models\CupAnagStatoCivile;
@@ -51,6 +52,8 @@ class CupAnagAnagrafica extends Breeze {
         'nazionalita' => [self::BELONGS_TO, 'related' => CupGeoNazione::class,'foreignKey' => 'nazionalita_id'],
         'rapplegale' => [self::BELONGS_TO, 'related' => \App\Models\CupAnagAnagrafica::class,'foreignKey' => 'rapplegale_id'],
         'stato_civile' => [self::BELONGS_TO, 'related' => CupAnagStatoCivile::class, 'foreignKey' => 'stato_civile_id'],
+
+        'contatti' => [self::HAS_MANY, 'related' => CupAnagContatto::class, 'foreignKey' => 'anagrafica_id'],
 //        'tickets' => [self::HAS_MANY, 'related' => 'App\Models\Ticket'],
     ];
 

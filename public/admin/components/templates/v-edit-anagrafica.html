@@ -91,19 +91,21 @@
                 <div class="card-body">
 
                     <div class="row">
+                        <v-widget :c-widget="widgets.email"></v-widget>
+                        <v-widget :c-widget="widgets.cell"></v-widget>
                         <v-widget :c-widget="widgets.tel"></v-widget>
                         <v-widget :c-widget="widgets.fax"></v-widget>
-                        <v-widget :c-widget="widgets.email"></v-widget>
                         <v-widget :c-widget="widgets.pec"></v-widget>
                         <v-widget :c-widget="widgets.url"></v-widget>
                     </div>
 
                     <div class="row separatorHr">Altri contatti</div>
 
-                    <!--                    <div class="row">-->
-                    <!--                        <v-widget :c-widget="widgets.codicefiscale"></v-widget>-->
-                    <!--                        <v-widget :c-widget="widgets.partitaiva"></v-widget>-->
-                    <!--                    </div>-->
+                    <div class="row">
+                        <!--                        <v-list-edit :c-conf="contattiList"></v-list-edit>-->
+                        <!--                        <v-list :c-model="'cup_anag_contatto'"></v-list>-->
+                        <v-widget :c-widget="widgets.contatti"></v-widget>
+                    </div>
                 </div>
             </div>
 

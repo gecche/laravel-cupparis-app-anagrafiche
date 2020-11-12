@@ -38,7 +38,7 @@ $factory->define(App\Models\CupAnagContatto::class, function (Faker $faker) {
             $value = $fakerIt->url;
             break;
         default:
-            $value = $fakerIt->words(2);
+            $value = $fakerIt->words(2,true);
             break;
 
     }
@@ -47,6 +47,6 @@ $factory->define(App\Models\CupAnagContatto::class, function (Faker $faker) {
     return [
         'tipo' => $tipo,
         'value' => $value,
-        'label' => rand(1,100) > 40 ? $fakerIt->words(2) : null,
+        'label' => rand(1,100) > 40 ? $fakerIt->words(2, true) : null,
     ];
 });

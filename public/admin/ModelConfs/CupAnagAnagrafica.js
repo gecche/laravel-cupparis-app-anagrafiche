@@ -119,6 +119,7 @@ var ModelCupAnagAnagrafica = {
             'numero_civico',
 
 
+            'cell',
             'tel',
             'fax',
             'email',
@@ -133,6 +134,7 @@ var ModelCupAnagAnagrafica = {
 
             'attivo',
 //'comuni'
+            'contatti',
         ],
         fieldsConfig: {
 
@@ -283,6 +285,36 @@ var ModelCupAnagAnagrafica = {
                 //
                 // },
             },
+
+            'contatti' : {
+                type : 'w-hasmany',
+                hasmanyConf: {
+                    langContext: 'cup_anag_anagrafica.fields.contatti',
+                    fields: [
+                        'id',
+                        'tipo',
+                        'value',
+                        'label',
+                        'status'
+                    ],
+                    fieldsConfig: {
+                        'status': 'w-hidden',
+
+                        'value': {
+                            type: 'w-input',
+                            template: "tpl-record2"
+                        },
+                        'label': {
+                            type: 'w-input',
+                            template: "tpl-record2"
+                        },
+                        'tipo': {
+                            type: 'w-select',
+                            template: "tpl-record2"
+                        },
+                    }
+                },
+                template: "tpl-full-no",            }
         }
     }
     ,

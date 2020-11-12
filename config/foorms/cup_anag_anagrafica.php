@@ -187,6 +187,7 @@ return [
             'numero_civico' => [],
 
 
+            'cell' => [],
             'tel' => [],
             'fax' => [],
             'email' => [],
@@ -203,10 +204,19 @@ return [
 
             'attivo' => [
                 'options' => 'boolean',
+                'nulloption' => false,
             ],
         ],
         'relations' => [
-
+            'contatti' => [
+                'fields' => [
+                    'tipo' => [
+                        'options' => 'dboptions',
+                    ],
+                    'value' => [],
+                    'label' => [],
+                ]
+            ]
         ],
         'params' => [
 
