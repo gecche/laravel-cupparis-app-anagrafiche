@@ -18,10 +18,18 @@ class CupAnagSeeder extends Seeder
         $this->call(CupAnagProfessioniTableSeeder::class);
         $this->call(CupAnagStatiCiviliTableSeeder::class);
 
-        factory(App\Models\CupAnagAnagrafica::class, 500)->create();
+        factory(App\Models\CupAnagAnagrafica::class, 500)->create()->each(function ($anagrafica) {
+            $nContatti = rand(0,100) > 40 ? rand(1,8) : 0;
 
+            if ($nContatti > 0) {
+                $anagrafica->contatti()->save(factory(App\Contact::class, $nContatti)->make());
+            }
+        });
+
+        /*
+         * AGGIUNTA RAPP LEGALE
+         */
         $countAnagrafiche = \App\Models\CupAnagAnagrafica::count();
-
 
         \Illuminate\Support\Facades\DB::table('cup_anag_anagrafiche')
             ->whereIn('id',[1,251])
@@ -40,5 +48,8 @@ class CupAnagSeeder extends Seeder
             $anagrafica->save();
 
         }
+        /*
+         * FINE AGGIUNTA RAPP LEGALE
+         */
     }
 }

@@ -10,47 +10,117 @@
                 <v-widget :c-widget="widget" :key="key"></v-widget>
             </template>
             <div class="row">
-
-
-                <w-radio :c-conf="widgets.fisicagiuridica" inline-template>
-                    <div class="col-12 mb-2 form-label-group">
-                        <div class="bw--1 border-solid border-gray-400 p--6 rounded">
-
-                            Persona fisica/giuridica:
-                            <label v-for="key in domainValuesOrder" class="form-radio">
-                                <input v-bind:name="getFieldName()" type="radio" :value="key"
-                                       v-model="value"
-                                       v-bind:c-marker="cMarker" v-on:change="change">
-                                <i class=""></i>
-                                <span>
-                                    <i v-if="key == 'F'" class="fa fa-user"></i>
-                                    <i v-else class="fa fa-briefcase"></i>
-                                    {{domainValues[key]}}
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                </w-radio>
-                <!--<v-widget v-for="(widget, key) in widgets" :c-widget="widget" v-if="!isHiddenField(key)"></v-widget>-->
-                <!--<v-widget :c-widget="widgets.fisicagiuridica"></v-widget>-->
-
+                <v-widget :c-widget="widgets.fisicagiuridica"></v-widget>
+                <v-widget :c-widget="widgets.attivo"></v-widget>
             </div>
 
-            <div v-show="fisicaGiuridicaValue === 'F'">
-                <div>
+            <div class="card shadow-md shadow-lg-hover transition-all-ease-250 transition-hover-top
+                        h-100 border-success bl-0 br-0 bb-0 bw--2 p-0">
+
+                <div class="card-header text-green-700">
+                    Dati principali
+                </div>
+                <div class="card-body">
+
+                    <div v-show="fisicaGiuridicaValue === 'F'">
 
 
-                    <div class="row separatorHr">pippo</div>
+                        <div class="row">
+                            <v-widget v-for="(widget, key) in getFisicaGiuridicaWidgets('F')" :v-key="key"
+                                      :c-widget="widget"></v-widget>
+                        </div>
+                    </div>
+                    <div class="row" v-show="fisicaGiuridicaValue === 'G'">
+                        <v-widget v-for="(widget, key) in getFisicaGiuridicaWidgets('G')" :v-key="key"
+                                  :c-widget="widget"></v-widget>
+                    </div>
+
+
+                    <div v-show="fisicaGiuridicaValue === 'F'">
+                        <div class="row separatorHr">Dati di nascita</div>
+                    </div>
+                    <div v-show="fisicaGiuridicaValue === 'G'">
+                        <div class="row separatorHr">Dati di costituzione</div>
+                    </div>
 
                     <div class="row">
-                        <v-widget v-for="(widget, key) in getFisicaGiuridicaWidgets('F')" :v-key="key" :c-widget="widget"></v-widget>
+                        <v-widget :c-widget="widgets.datanascita"></v-widget>
+                        <v-widget :c-widget="widgets.comunenascita_id"></v-widget>
+                    </div>
+
+                    <div class="row separatorHr">C.F. / P.IVA</div>
+
+                    <div class="row">
+                        <v-widget :c-widget="widgets.codicefiscale"></v-widget>
+                        <v-widget :c-widget="widgets.partitaiva"></v-widget>
                     </div>
                 </div>
             </div>
-            <div class="row" v-show="fisicaGiuridicaValue === 'G'">
-                <v-widget v-for="(widget, key) in getFisicaGiuridicaWidgets('G')" :v-key="key" :c-widget="widget"></v-widget>
+
+            <div class="card shadow-md shadow-lg-hover transition-all-ease-250 transition-hover-top
+                        h-100 border-success bl-0 br-0 bb-0 bw--2 p-0 mt--12">
+
+                <div class="card-header text-green-700">
+                    Indirizzi
+                </div>
+                <div class="card-body">
+
+                    <div class="row separatorHr">Indirizzo fiscale/principale</div>
+                    <div class="row">
+                        <v-widget :c-widget="widgets.indirizzo"></v-widget>
+                        <v-widget :c-widget="widgets.numero_civico"></v-widget>
+                        <v-widget :c-widget="widgets.localita"></v-widget>
+                        <v-widget :c-widget="widgets.comuneresidenza_id"></v-widget>
+                    </div>
+
+                    <div class="row separatorHr">Altri indirizzi</div>
+
+                    <!--                    <div class="row">-->
+                    <!--                        <v-widget :c-widget="widgets.codicefiscale"></v-widget>-->
+                    <!--                        <v-widget :c-widget="widgets.partitaiva"></v-widget>-->
+                    <!--                    </div>-->
+                </div>
             </div>
 
+            <div class="card shadow-md shadow-lg-hover transition-all-ease-250 transition-hover-top
+                        h-100 border-success bl-0 br-0 bb-0 bw--2 p-0 mt--12">
+
+                <div class="card-header text-green-700">
+                    Contatti
+                </div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <v-widget :c-widget="widgets.tel"></v-widget>
+                        <v-widget :c-widget="widgets.fax"></v-widget>
+                        <v-widget :c-widget="widgets.email"></v-widget>
+                        <v-widget :c-widget="widgets.pec"></v-widget>
+                        <v-widget :c-widget="widgets.url"></v-widget>
+                    </div>
+
+                    <div class="row separatorHr">Altri contatti</div>
+
+                    <!--                    <div class="row">-->
+                    <!--                        <v-widget :c-widget="widgets.codicefiscale"></v-widget>-->
+                    <!--                        <v-widget :c-widget="widgets.partitaiva"></v-widget>-->
+                    <!--                    </div>-->
+                </div>
+            </div>
+
+            <div class="card shadow-md shadow-lg-hover transition-all-ease-250 transition-hover-top
+                        h-100 border-success bl-0 br-0 bb-0 bw--2 p-0 mt--12">
+
+                <div class="card-header text-green-700">
+                    Altre informazioni
+                </div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <v-widget :c-widget="widgets.note"></v-widget>
+                    </div>
+
+                </div>
+            </div>
 
 
         </form>

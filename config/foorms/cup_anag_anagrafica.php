@@ -135,36 +135,20 @@ return [
             'id' => [],
 
             'fisicagiuridica' => [
-                'options' => 'dboptions',
-                'nulloption' => false,
+                //'options' => 'dboptions',
+                //'nulloption' => false,
             ],
 
             'denominazione' => [],
-            'cognome' => [],
-            'nome' => [],
-
             'alias' => [],
 
-            'codicefiscale' => [],
-            'partitaiva' => [],
-
-            'datanascita' => [],
-
-            'comunenascita_id' => [
-                'referred_data' => 'method:model',
-            ],
+            'naturagiuridica_id' => [],
             'rapplegale_id' => [
 //                'referred_data' => 'method:model',
             ],
 
-            'nazionalita_id' => [
-                'options' => 'relation:nazionalita'
-            ],
-
-//PERSONA GIURIDICA
-            'naturagiuridica_id' => [],
-
-//PERSONA FISICA
+            'cognome' => [],
+            'nome' => [],
             'sesso' => [
                 'options' => 'dboptions'
             ],
@@ -174,6 +158,24 @@ return [
             'stato_civile_id' => [
                 'options' => 'relation:stato_civile'
             ],
+
+
+            'codicefiscale' => [],
+            'partitaiva' => [],
+
+            'datanascita' => [],
+
+            'comunenascita_id' => [
+                'referred_data' => 'method:model',
+            ],
+
+            'nazionalita_id' => [
+                'options' => 'relation:nazionalita'
+            ],
+
+//PERSONA GIURIDICA
+
+//PERSONA FISICA
 
             'indirizzo' => [],
             'cap' => [],

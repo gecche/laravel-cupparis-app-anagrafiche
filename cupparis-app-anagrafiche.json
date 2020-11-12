@@ -4,7 +4,8 @@
             "cup_anag_anagrafica",
             "cup_anag_natura_giuridica",
             "cup_anag_professione",
-            "cup_anag_stato_civile"
+            "cup_anag_stato_civile",
+            "cup_anag_contatto"
         ]
     },
     "modelconfs": {
@@ -12,7 +13,8 @@
             "CupAnagAnagrafica.js",
             "CupAnagNaturaGiuridica.js",
             "CupAnagProfessione.js",
-            "CupAnagStatoCivile.js"
+            "CupAnagStatoCivile.js",
+            "CupAnagContatto.js"
         ]
     },
     "permissions": {
@@ -20,7 +22,8 @@
             "cup_anag_anagrafica",
             "cup_anag_natura_giuridica",
             "cup_anag_professioni",
-            "cup_anag_stati_civili"
+            "cup_anag_stati_civili",
+            "cup_anag_contatto"
         ],
         "other_permissions": {
             "web": [
@@ -39,7 +42,8 @@
         "CupAnagAnagrafica",
         "CupAnagNaturaGiuridica",
         "CupAnagProfessione",
-        "CupAnagStatoCivile"
+        "CupAnagStatoCivile",
+        "CupAnagContatto"
     ],
     "datafile-models": [
     ],
@@ -62,7 +66,8 @@
             "CupAnagSeeder"
         ],
         "factories": [
-            "CupAnagAnagraficaFactory"
+            "CupAnagAnagraficaFactory",
+            "CupAnagContattoFactory"
         ],
         "dump": [
         ]

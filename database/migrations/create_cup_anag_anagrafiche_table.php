@@ -69,6 +69,7 @@ class CreateCupAnagAnagraficheTable extends Migration
             $table->foreign('nazione_id')->references('id')->on('cup_geo_nazioni')
                 ->onDelete('restrict')->onUpdate('cascade');
 
+            $table->string('cell')->nullable()->default(null);
             $table->string('tel')->nullable()->default(null);
             $table->string('fax')->nullable()->default(null);
             $table->string('email')->nullable()->default(null);

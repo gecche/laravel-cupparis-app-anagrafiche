@@ -1,7 +1,5 @@
 var ModelCupAnagAnagrafica = {
-    listEdit : {
-
-    },
+    listEdit: {},
     search: {
         modelName: 'cup_anag_anagrafica',
         //langContext : 'user',
@@ -78,7 +76,7 @@ var ModelCupAnagAnagrafica = {
         }
     },
     edit: {
-        cRef : 'vEditAnag',
+        cRef: 'vEditAnag',
         modelName: 'cup_anag_anagrafica',
         actions: ['action-save', 'action-back'],
         fields: [
@@ -136,50 +134,58 @@ var ModelCupAnagAnagrafica = {
             'attivo',
 //'comuni'
         ],
-        fieldsConfig : {
+        fieldsConfig: {
 
-            'fisicagiuridica' : {
+            'fisicagiuridica': {
                 type: 'w-radio',
-                template: "tpl-full-no",
-                methods : {
-                    change : function() {
+                // template: "tpl-record2",
+                domainValues: {
+                    'F': "<i class='fa fa-user'></i> F",
+                    'G': '<i class="fa fa-briefcase"></i> G'
+                },
+                methods: {
+                    change: function () {
                         var that = this;
                         that.$crud.cRefs.vEditAnag.fisicaGiuridicaValue = that.getValue();
                     }
                 }
                 //inputType: 'date',
             },
-            'nazionalita_id' : {
+            'nazionalita_id': {
                 type: 'w-select',
-                css : 'fisica',
+                css: 'fisica',
             },
-            'naturagiuridica_id' : {
+            'naturagiuridica_id': {
                 type: 'w-select',
-                css : 'giuridica',
+                css: 'giuridica',
             },
-            'professione_id' : {
+            'professione_id': {
                 type: 'w-select',
-                css : 'fisica',
+                css: 'fisica',
             },
-            'stato_civile_id' : {
+            'stato_civile_id': {
                 type: 'w-select',
-                css : 'fisica',
+                css: 'fisica',
             },
-            'sesso' : {
+            'sesso': {
                 type: 'w-select',
-                css : 'fisica',
+                css: 'fisica',
             },
             // 'organizzazione' : {
             //     type: 'w-select',
             // },
-            'attivo' : {
-                type: 'w-select',
+            'attivo': {
+                type: 'w-radio',
             },
-            'note' : {
+            'note': {
                 type: 'w-textarea',
             },
+            'datanascita': {
+                type: 'w-input',
+                inputType : 'date',
+            },
 
-            'comunenascita_id' : {
+            'comunenascita_id': {
                 type: "w-b2-select2",
                 defaultValue: {
                     id: -1,
@@ -216,7 +222,7 @@ var ModelCupAnagAnagrafica = {
 
                 },
             },
-            'comuneresidenza_id' : {
+            'comuneresidenza_id': {
                 type: "w-b2-select2",
                 defaultValue: {
                     id: -1,
@@ -246,7 +252,7 @@ var ModelCupAnagAnagrafica = {
 
                 },
             },
-            'rapplegale_id' : {
+            'rapplegale_id': {
                 type: "w-b2-select2",
                 defaultValue: {
                     id: -1,
