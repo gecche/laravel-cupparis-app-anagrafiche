@@ -210,6 +210,7 @@ return [
         'relations' => [
             'contatti' => [
                 'fields' => [
+                    'id' => [],
                     'tipo' => [
                         'options' => 'dboptions',
                     ],

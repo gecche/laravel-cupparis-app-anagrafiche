@@ -287,11 +287,11 @@ var ModelCupAnagAnagrafica = {
             },
 
             'contatti' : {
-                type : 'w-hasmany',
-                hasmanyConf: {
+                type : 'w-hasmany-listed',
+                hasManyListConf: {
+                    hasManyName : 'contatti',
                     langContext: 'cup_anag_anagrafica.fields.contatti',
                     fields: [
-                        'id',
                         'tipo',
                         'value',
                         'label',
@@ -302,19 +302,30 @@ var ModelCupAnagAnagrafica = {
 
                         'value': {
                             type: 'w-input',
-                            template: "tpl-record2"
+                            labelGroup : false,
+                            template: "tpl-list"
                         },
                         'label': {
                             type: 'w-input',
-                            template: "tpl-record2"
+                            template: "tpl-list"
                         },
                         'tipo': {
                             type: 'w-select',
-                            template: "tpl-record2"
+                            template: "tpl-list"
                         },
-                    }
+                    },
+                    fieldsDefaults : {
+                        'status': 'new',
+                        'id' : null,
+                        'value': null,
+                        'label': null,
+                        'tipo': 'email',
+                    },
+                    hasFooter: false,
+                    limit : 8,
                 },
-                template: "tpl-full-no",            }
+                template: "tpl-full-no",
+            }
         }
     }
     ,
