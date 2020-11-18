@@ -36,9 +36,9 @@ class CupAnagAnagraficheTableSeeder extends Seeder
 
             $nIndirizzi = min($nIndirizzi,$countTipiIndirizzi);
             $tipiIndirizzi = \Illuminate\Support\Arr::random(range(1,$countTipiIndirizzi),$nIndirizzi);
-            for ($i = 0;$i <= count($tipiIndirizzi);$i++) {
+            for ($i = 0;$i < count($tipiIndirizzi);$i++) {
                 $anagrafica->indirizzi()->save(factory(\App\Models\CupAnagIndirizzo::class)->make([
-                    'ordine' => $i-1,
+                    'ordine' => $i,
                     'tipologia_id' => $tipiIndirizzi[$i],
                 ]));
             }
