@@ -135,6 +135,7 @@ var ModelCupAnagAnagrafica = {
             'attivo',
 //'comuni'
             'contatti',
+            'indirizzi',
         ],
         fieldsConfig: {
 
@@ -326,7 +327,7 @@ var ModelCupAnagAnagrafica = {
                 template: "tpl-full-no",
             },
 
-            'indirizzi' : {
+            'indirizziLIST' : {
                 type : 'w-hasmany-listed',
                 hasManyListConf: {
                     hasManyName : 'indirizzi',
@@ -360,8 +361,36 @@ var ModelCupAnagAnagrafica = {
                             template: "tpl-list"
                         },
                         'comune_id': {
-                            type: 'w-input',
-                            template: "tpl-list"
+                            type: "w-b2-select2",
+                            defaultValue: {
+                                id: -1,
+                                text: 'Seleziona...'
+                            },
+                            theme: 'bootstrap4',
+                            allowClear: true,
+                            foormName: 'cup_anag_anagrafica',
+                            fieldName : 'indirizzi|comune_id',
+                            viewType: 'edit',
+                            labelFields: [
+                                'nome_it',
+                                'sigla_provincia',
+                                'nazione|codice_iso_3'
+                            ],
+                            referredDataField : 'comune',
+                            methods: {
+                                getLabel: function (value) {
+                                    var that = this;
+                                    //console.log('getLabel value',value);
+                                    if (!value || Object.keys(value).length == 0) {
+                                        return 'Seleziona...';
+                                    }
+                                    return value['nome_it']
+                                        + " (" + value['sigla_provincia'] + ")"
+                                        + " - " + value['nazione|codice_iso_3'];
+                                },
+
+
+                            },
                         },
                         'localita': {
                             type: 'w-input',
@@ -393,7 +422,88 @@ var ModelCupAnagAnagrafica = {
                         'persona_contatto' : null,
                         'note' : null,
                     },
+                    mounted : function () {
+                        var that = this;
+                    },
                     hasFooter: false,
+                },
+                template: "tpl-full-no",
+            },
+            'indirizzi' : {
+                type : 'w-hasmany',
+                hasmanyConf: {
+                    hasManyName : 'indirizzi',
+                    langContext: 'cup_anag_anagrafica.fields.indirizzi',
+                    fields: [
+                        'tipologia_id',
+                        'indirizzo',
+                        'cap',
+                        'comune_id',
+
+                        'localita',
+                        'numero_civico',
+
+                        'persona_contatto',
+                        'note',
+                    ],
+                    fieldsConfig: {
+                        'status': 'w-hidden',
+
+                        'indirizzo': {
+                            type: 'w-input',
+                            labelGroup : false,
+                        },
+                        'tipologia_id': {
+                            type: 'w-select',
+                        },
+                        'cap': {
+                            type: 'w-input',
+                        },
+                        'comune_id': {
+                            type: "w-b2-select2",
+                            defaultValue: {
+                                id: -1,
+                                text: 'Seleziona...'
+                            },
+                            theme: 'bootstrap4',
+                            allowClear: true,
+                            foormName: 'cup_anag_anagrafica',
+                            fieldName : 'indirizzi|comune_id',
+                            viewType: 'edit',
+                            labelFields: [
+                                'nome_it',
+                                'sigla_provincia',
+                                'nazione|codice_iso_3'
+                            ],
+                            referredDataField : 'comune',
+                            methods: {
+                                getLabel: function (value) {
+                                    var that = this;
+                                    //console.log('getLabel value',value);
+                                    if (!value || Object.keys(value).length == 0) {
+                                        return 'Seleziona...';
+                                    }
+                                    return value['nome_it']
+                                        + " (" + value['sigla_provincia'] + ")"
+                                        + " - " + value['nazione|codice_iso_3'];
+                                },
+
+
+                            },
+                        },
+                        'localita': {
+                            type: 'w-input',
+                        },
+                        'numero_civico': {
+                            type: 'w-input',
+                        },
+                        'persona_contatto': {
+                            type: 'w-input',
+                        },
+                        'note': {
+                            type: 'w-textarea',
+                        },
+                    },
                 },
                 template: "tpl-full-no",
             }

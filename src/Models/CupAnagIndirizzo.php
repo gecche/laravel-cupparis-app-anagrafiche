@@ -35,6 +35,7 @@ class CupAnagIndirizzo extends Breeze {
     public static $relationsData = [
         'anagrafica' => [self::BELONGS_TO, 'related' => \App\Models\CupAnagAnagrafica::class,'foreignKey' => 'anagrafica_id'],
         'tipologia' => [self::BELONGS_TO, 'related' => \App\Models\CupAnagTipologiaIndirizzo::class,'foreignKey' => 'tipologia_id'],
+        'comune' => [self::BELONGS_TO, 'related' => \App\Models\CupGeoComune::class,'foreignKey' => 'comune_id'],
 
 //        'tickets' => [self::HAS_MANY, 'related' => 'App\Models\Ticket'],
     ];
@@ -64,5 +65,24 @@ class CupAnagIndirizzo extends Breeze {
     public $nItemsForSelectList = 100;
     public $itemNoneForSelectList = false;
     public $fieldsSeparator = ' - ';
+
+    public function createReferredDataComuneId()
+    {
+        $relationNameId = 'comune_id';
+        $relationName = 'comune';
+        if ($this->getKey() && $this->$relationNameId) {
+            return [
+                'nome_it' => $this->$relationName->nome_it,
+                'sigla_provincia' => $this->$relationName->sigla_provincia,
+                'nazione|codice_iso_3' => $this->$relationName->nazione_id
+                    ? $this->$relationName->nazione->codice_iso_3 : 'ITA',
+            ];
+        }
+        return [
+            'nome_it' => null,
+            'sigla_provincia' => null,
+            'nazione|codice_iso_3' => null,
+        ];
+    }
 
 }

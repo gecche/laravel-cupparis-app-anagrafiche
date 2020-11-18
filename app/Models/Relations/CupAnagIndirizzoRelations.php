@@ -11,4 +11,15 @@ trait CupAnagIndirizzoRelations
 
     }
 
+    public function tipologia() {
+
+        return $this->belongsTo(\App\Models\CupAnagTipologiaIndirizzo::class, 'tipologia_id', null, null);
+
+    }
+
+    public function comune() {
+
+        return $this->belongsTo(\App\Models\CupGeoComune::class, 'comune_id', null, null);
+
+    }
 }

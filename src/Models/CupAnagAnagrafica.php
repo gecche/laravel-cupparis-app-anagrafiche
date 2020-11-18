@@ -112,4 +112,8 @@ class CupAnagAnagrafica extends Breeze {
     {
         return $this->createReferredDataComune('comunenascita');
     }
+//    public function createReferredDataComuneId($value)
+//    {
+//        return [];
+//    }
 }

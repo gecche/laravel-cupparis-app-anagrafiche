@@ -235,7 +235,7 @@ return [
                     'indirizzo' => [],
                     'cap' => [],
                     'comune_id' => [
-                        'referred_data' => 'method:model',
+//                        'referred_data' => 'method:model',
                     ],
 
                     'localita' => [],

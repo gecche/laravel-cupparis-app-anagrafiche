@@ -36,6 +36,7 @@ class AnagraficheServiceProvider extends ServiceProvider
             __DIR__ . '/../app/Models' => app_path('Models'),
             __DIR__ . '/../app/Models/Relations' => app_path('Models/Relations'),
             __DIR__ . '/../app/Policies' => app_path('Policies'),
+            __DIR__ . '/../app/Foorm' => app_path('Foorm'),
 //            __DIR__ . '/../app/Services' => app_path('Services'),
 //            __DIR__ . '/../app/Http/Kernel.php' => app_path('Http/Kernel.php'),
 //            __DIR__ . '/../app/Http/Controllers/Controller.php' => app_path('Http/Controllers/Controller.php'),
