@@ -33,7 +33,7 @@ $factory->define(App\Models\CupAnagAnagrafica::class, function (Faker $faker) {
 
     if ($fisicaGiuridica == 'F') {
         $cognome = $fakerIt->lastName;
-        $nome = $fakerIt->lastName;
+        $nome = $fakerIt->firstName;
         $denominazione = $cognome . ' ' . $nome;
         $alias = '';
         $partitaIva = null;

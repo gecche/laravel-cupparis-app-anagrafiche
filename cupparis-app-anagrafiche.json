@@ -5,7 +5,9 @@
             "cup_anag_natura_giuridica",
             "cup_anag_professione",
             "cup_anag_stato_civile",
-            "cup_anag_contatto"
+            "cup_anag_contatto",
+            "cup_anag_tipologia_indirizzo",
+            "cup_anag_indirizzo"
         ]
     },
     "modelconfs": {
@@ -14,7 +16,9 @@
             "CupAnagNaturaGiuridica.js",
             "CupAnagProfessione.js",
             "CupAnagStatoCivile.js",
-            "CupAnagContatto.js"
+            "CupAnagContatto.js",
+            "CupAnagTipologiaIndirizzo.js",
+            "CupAnagIndirizzo.js"
         ]
     },
     "permissions": {
@@ -23,7 +27,9 @@
             "cup_anag_natura_giuridica",
             "cup_anag_professioni",
             "cup_anag_stati_civili",
-            "cup_anag_contatto"
+            "cup_anag_contatto",
+            "cup_anag_tipologia_indirizzo",
+            "cup_anag_indirizzo"
         ],
         "other_permissions": {
             "web": [
@@ -35,7 +41,8 @@
             "\\App\\Models\\CupAnagAnagrafica": "\\App\\Policies\\CupAnagAnagraficaPolicy",
             "\\App\\Models\\CupAnagNaturaGiuridica": "\\App\\Policies\\CupAnagNaturaGiuridicaPolicy",
             "\\App\\Models\\CupAnagProfessione": "\\App\\Policies\\CupAnagProfessionePolicy",
-            "\\App\\Models\\CupAnagStatoCivile": "\\App\\Policies\\CupAnagStatoCivilePolicy"
+            "\\App\\Models\\CupAnagStatoCivile": "\\App\\Policies\\CupAnagStatoCivilePolicy",
+            "\\App\\Models\\CupAnagTipologiaIndirizzo": "\\App\\Policies\\CupAnagTipologiaIndirizzoPolicy"
         }
     },
     "models": [
@@ -43,7 +50,9 @@
         "CupAnagNaturaGiuridica",
         "CupAnagProfessione",
         "CupAnagStatoCivile",
-        "CupAnagContatto"
+        "CupAnagContatto",
+        "CupAnagTipologiaIndirizzo",
+        "CupAnagIndirizzo"
     ],
     "datafile-models": [
     ],
@@ -63,12 +72,14 @@
             "CupAnagNatureGiuridicheTableSeeder",
             "CupAnagProfessioniTableSeeder",
             "CupAnagStatiCiviliTableSeeder",
+            "CupAnagTipologieIndirizziTableSeeder",
             "CupAnagAnagraficheTableSeeder",
             "CupAnagSeeder"
         ],
         "factories": [
             "CupAnagAnagraficaFactory",
-            "CupAnagContattoFactory"
+            "CupAnagContattoFactory",
+            "CupAnagIndirizzoFactory"
         ],
         "dump": [
         ]

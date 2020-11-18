@@ -58,4 +58,10 @@ trait CupAnagAnagraficaRelations
         return $this->hasMany(\App\Models\CupAnagContatto::class, 'anagrafica_id');
 
     }
+
+    public function indirizzi() {
+
+        return $this->hasMany(\App\Models\CupAnagIndirizzo::class, 'anagrafica_id');
+
+    }
 }

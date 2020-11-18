@@ -54,11 +54,13 @@ class AnagraficheServiceProvider extends ServiceProvider
             // Export the migration
             if (! class_exists('CreateCupAnagNatureGiuridicheTable')) {
                 $this->publishes([
+                    __DIR__ . '/../database/migrations/create_cup_anag_tipologie_indirizzi_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-79) . '_create_cup_anag_tipologie_indirizzi_table.php'),
                     __DIR__ . '/../database/migrations/create_cup_anag_nature_giuridiche_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-79) . '_create_cup_anag_nature_giuridiche_table.php'),
                     __DIR__ . '/../database/migrations/create_cup_anag_stati_civili_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-79) . '_create_cup_anag_stati_civili_table.php'),
                     __DIR__ . '/../database/migrations/create_cup_anag_professioni_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-79) . '_create_cup_anag_professioni_table.php'),
                     __DIR__ . '/../database/migrations/create_cup_anag_anagrafiche_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-75) . '_create_cup_anag_anagrafiche_table.php'),
                     __DIR__ . '/../database/migrations/create_cup_anag_contatti_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-69) . '_create_cup_anag_contatti_table.php'),
+                    __DIR__ . '/../database/migrations/create_cup_anag_indirizzi_table.php' => database_path('migrations/' . date('Y_m_d_His', time()-69) . '_create_cup_anag_indirizzi_table.php'),
                     // you can add any number of migrations here
                 ], 'migrations');
             }

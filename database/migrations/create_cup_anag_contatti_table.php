@@ -18,7 +18,7 @@ class CreateCupAnagContattiTable extends Migration
 
             $table->increments('id');// int(11) NOT NULL,
 
-            $table->integer('anagrafica_id')->unsigned()->index();// varchar(4) DEFAULT NULL,
+            $table->integer('anagrafica_id')->unsigned();// varchar(4) DEFAULT NULL,
             $table->foreign('anagrafica_id')->references('id')->on('cup_anag_anagrafiche')
                 ->onDelete('cascade')->onUpdate('cascade');
 
@@ -26,6 +26,8 @@ class CreateCupAnagContattiTable extends Migration
 
             $table->string('value')->nullable()->default(null);
             $table->string('label')->nullable()->default(null);
+            $table->integer('ordine')->unsigned()->default(0);// varchar(4) DEFAULT NULL,
+            $table->index(['anagrafica_id','ordine'],'cup_anag_cnt_1');
 
         });
     }

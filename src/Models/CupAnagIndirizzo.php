@@ -5,12 +5,12 @@ namespace Gecche\Cupparis\App\Anagrafiche\Models;
 use Gecche\Cupparis\App\Breeze\Breeze;
 
 
-class CupAnagContatto extends Breeze {
+class CupAnagIndirizzo extends Breeze {
 
-    protected $table = "cup_anag_contatti";
+    protected $table = "cup_anag_indirizzi";
 
-    public $ownerships = false;
-    public $timestamps = false;
+    public $ownerships = true;
+    public $timestamps = true;
     /**
      * The attributes that are mass assignable.
      *
@@ -34,6 +34,7 @@ class CupAnagContatto extends Breeze {
 
     public static $relationsData = [
         'anagrafica' => [self::BELONGS_TO, 'related' => \App\Models\CupAnagAnagrafica::class,'foreignKey' => 'anagrafica_id'],
+        'tipologia' => [self::BELONGS_TO, 'related' => \App\Models\CupAnagTipologiaIndirizzo::class,'foreignKey' => 'tipologia_id'],
 
 //        'tickets' => [self::HAS_MANY, 'related' => 'App\Models\Ticket'],
     ];
@@ -51,13 +52,13 @@ class CupAnagContatto extends Breeze {
 //        'cognome' => 'between:1,255',
     );
 
-    public $columnsForSelectList = ['tipo','value','label'];
+    public $columnsForSelectList = ['indirizzo'];
     //['id','nome_it'];
 
     public $defaultOrderColumns = ['anagrafica_id' => 'ASC', 'ordine' => 'ASC'];
     //['cognome' => 'ASC','nome' => 'ASC'];
 
-    public $columnsSearchAutoComplete = ['tipo','value','label'];
+    public $columnsSearchAutoComplete = ['indirizzo'];
 
     public $nItemsAutoComplete = 20;
     public $nItemsForSelectList = 100;

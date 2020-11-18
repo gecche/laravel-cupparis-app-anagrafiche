@@ -322,7 +322,78 @@ var ModelCupAnagAnagrafica = {
                         'tipo': 'email',
                     },
                     hasFooter: false,
-                    limit : 8,
+                },
+                template: "tpl-full-no",
+            },
+
+            'indirizzi' : {
+                type : 'w-hasmany-listed',
+                hasManyListConf: {
+                    hasManyName : 'indirizzi',
+                    langContext: 'cup_anag_anagrafica.fields.indirizzi',
+                    fields: [
+                        'tipologia_id',
+                        'indirizzo',
+                        'cap',
+                        'comune_id',
+
+                        'localita',
+                        'numero_civico',
+
+                        'persona_contatto',
+                        'note',
+                    ],
+                    fieldsConfig: {
+                        'status': 'w-hidden',
+
+                        'indirizzo': {
+                            type: 'w-input',
+                            labelGroup : false,
+                            template: "tpl-list"
+                        },
+                        'tipologia_id': {
+                            type: 'w-select',
+                            template: "tpl-list"
+                        },
+                        'cap': {
+                            type: 'w-input',
+                            template: "tpl-list"
+                        },
+                        'comune_id': {
+                            type: 'w-input',
+                            template: "tpl-list"
+                        },
+                        'localita': {
+                            type: 'w-input',
+                            template: "tpl-list"
+                        },
+                        'numero_civico': {
+                            type: 'w-input',
+                            template: "tpl-list"
+                        },
+                        'persona_contatto': {
+                            type: 'w-input',
+                            template: "tpl-list"
+                        },
+                        'note': {
+                            type: 'w-textarea',
+                            template: "tpl-list"
+                        },
+                    },
+                    fieldsDefaults : {
+                        'status': 'new',
+                        'id' : null,
+                        'indirizzo' : null,
+                        'cap' : null,
+                        'comuneresidenza_id' : null,
+
+                        'localita' : null,
+                        'numero_civico' : null,
+
+                        'persona_contatto' : null,
+                        'note' : null,
+                    },
+                    hasFooter: false,
                 },
                 template: "tpl-full-no",
             }
