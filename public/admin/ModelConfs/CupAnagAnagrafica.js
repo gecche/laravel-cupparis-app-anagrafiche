@@ -327,9 +327,11 @@ var ModelCupAnagAnagrafica = {
                 template: "tpl-full-no",
             },
 
-            'indirizziLIST' : {
-                type : 'w-hasmany-listed',
+            'indirizzi' : {
+                type : 'w-hasmany-listed-constraint',
                 hasManyListConf: {
+                    modelName : 'cup_anag_indirizzo',
+                    constraintKey : 'anagrafica_id',
                     hasManyName : 'indirizzi',
                     langContext: 'cup_anag_anagrafica.fields.indirizzi',
                     fields: [
@@ -429,7 +431,7 @@ var ModelCupAnagAnagrafica = {
                 },
                 template: "tpl-full-no",
             },
-            'indirizzi' : {
+            'indirizziLIST' : {
                 type : 'w-hasmany',
                 hasmanyConf: {
                     hasManyName : 'indirizzi',
