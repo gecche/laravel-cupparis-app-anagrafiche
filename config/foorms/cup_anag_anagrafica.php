@@ -215,6 +215,7 @@ return [
                 'options' => 'boolean',
                 'nulloption' => false,
             ],
+
         ],
         'relations' => [
             'contatti' => [
@@ -247,13 +248,9 @@ return [
                 ]
             ],
             'raggruppamenti' => [
-                'fields' => [
-                    'id' => [],
-                    'nome_it' => [],
-                    'codice' => [],
-                ],
-                'options' => 'relation:raggruppamenti',
+                'as_options' => [],
             ]
+
         ],
         'params' => [
 

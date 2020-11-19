@@ -300,13 +300,19 @@ var ModelCupAnagAnagrafica = {
                     hasManyName : 'contatti',
                     langContext: 'cup_anag_anagrafica.fields.contatti',
                     fields: [
+                        'id',
                         'tipo',
                         'value',
                         'label',
                         'status'
                     ],
                     fieldsConfig: {
-                        'status': 'w-hidden',
+                        'id': {
+                            type : 'w-hidden',
+                        },
+                        'status': {
+                            type : 'w-hidden'
+                        },
 
                         'value': {
                             type: 'w-input',
