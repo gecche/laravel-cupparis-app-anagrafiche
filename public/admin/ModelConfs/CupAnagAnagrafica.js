@@ -126,6 +126,8 @@ var ModelCupAnagAnagrafica = {
             'pec',
             'url',
 
+            'iban',
+
             'note',
 //ALTRE INFO UTILI A UNA CERTA APP (JSON)
 //             'app_info',
@@ -136,6 +138,7 @@ var ModelCupAnagAnagrafica = {
 //'comuni'
             'contatti',
             'indirizzi',
+            'raggruppamenti',
         ],
         fieldsConfig: {
 
@@ -285,6 +288,10 @@ var ModelCupAnagAnagrafica = {
                 //
                 //
                 // },
+            },
+
+            'raggruppamenti' : {
+                type : "w-checkbox",
             },
 
             'contatti' : {

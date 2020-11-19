@@ -123,12 +123,27 @@
                 <div class="card-body">
 
                     <div class="row">
+                        <v-widget :c-widget="widgets.iban"></v-widget>
                         <v-widget :c-widget="widgets.note"></v-widget>
                     </div>
 
                 </div>
             </div>
 
+            <div class="card shadow-md shadow-lg-hover transition-all-ease-250 transition-hover-top
+                        h-100 border-success bl-0 br-0 bb-0 bw--2 p-0 mt--12">
+
+                <div class="card-header text-green-700">
+                    Raggruppamenti
+                </div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <v-widget :c-widget="widgets.raggruppamenti"></v-widget>
+                    </div>
+
+                </div>
+            </div>
 
         </form>
         <div v-html="beforeActions"></div>

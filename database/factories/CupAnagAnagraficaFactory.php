@@ -107,6 +107,8 @@ $factory->define(App\Models\CupAnagAnagrafica::class, function (Faker $faker) {
         'url' => rand(1, 100) > 65 ? $fakerIt->url : null,
         'note' => rand(1, 100) > 75 ? $fakerIt->words(5, true) : null,
 
+        'iban' => rand(1, 100) > 50 ? $fakerIt->iban('IT') : null,
+
 
         'organizzazione' => 0,
         'attivo' => rand(1, 100) > 98 ? 0 : 1,

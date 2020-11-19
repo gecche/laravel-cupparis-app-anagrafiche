@@ -7,7 +7,8 @@
             "cup_anag_stato_civile",
             "cup_anag_contatto",
             "cup_anag_tipologia_indirizzo",
-            "cup_anag_indirizzo"
+            "cup_anag_indirizzo",
+            "cup_anag_tipologia_anagrafica"
         ]
     },
     "modelconfs": {
@@ -18,7 +19,8 @@
             "CupAnagStatoCivile.js",
             "CupAnagContatto.js",
             "CupAnagTipologiaIndirizzo.js",
-            "CupAnagIndirizzo.js"
+            "CupAnagIndirizzo.js",
+            "CupAnagTipologiaAnagrafica.js"
         ]
     },
     "permissions": {
@@ -29,7 +31,8 @@
             "cup_anag_stati_civili",
             "cup_anag_contatto",
             "cup_anag_tipologia_indirizzo",
-            "cup_anag_indirizzo"
+            "cup_anag_indirizzo",
+            "cup_anag_tipologia_anagrafica"
         ],
         "other_permissions": {
             "web": [
@@ -42,7 +45,8 @@
             "\\App\\Models\\CupAnagNaturaGiuridica": "\\App\\Policies\\CupAnagNaturaGiuridicaPolicy",
             "\\App\\Models\\CupAnagProfessione": "\\App\\Policies\\CupAnagProfessionePolicy",
             "\\App\\Models\\CupAnagStatoCivile": "\\App\\Policies\\CupAnagStatoCivilePolicy",
-            "\\App\\Models\\CupAnagTipologiaIndirizzo": "\\App\\Policies\\CupAnagTipologiaIndirizzoPolicy"
+            "\\App\\Models\\CupAnagTipologiaIndirizzo": "\\App\\Policies\\CupAnagTipologiaIndirizzoPolicy",
+            "\\App\\Models\\CupAnagTipologiaAnagrafica": "\\App\\Policies\\CupAnagTipologiaAnagraficaPolicy"
         }
     },
     "models": [
@@ -52,7 +56,8 @@
         "CupAnagStatoCivile",
         "CupAnagContatto",
         "CupAnagTipologiaIndirizzo",
-        "CupAnagIndirizzo"
+        "CupAnagIndirizzo",
+        "CupAnagTipologiaAnagrafica"
     ],
     "datafile-models": [
     ],
@@ -73,6 +78,7 @@
             "CupAnagProfessioniTableSeeder",
             "CupAnagStatiCiviliTableSeeder",
             "CupAnagTipologieIndirizziTableSeeder",
+            "CupAnagTipologieAnagraficheTableSeeder",
             "CupAnagAnagraficheTableSeeder",
             "CupAnagSeeder"
         ],

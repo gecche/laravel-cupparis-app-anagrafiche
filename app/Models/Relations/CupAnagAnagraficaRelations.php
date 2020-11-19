@@ -64,4 +64,10 @@ trait CupAnagAnagraficaRelations
         return $this->hasMany(\App\Models\CupAnagIndirizzo::class, 'anagrafica_id');
 
     }
+
+    public function raggruppamenti() {
+
+        return $this->belongsToMany(\App\Models\CupAnagTipologiaAnagrafica::class, 'cup_anag_raggruppamenti_anagrafiche', 'anagrafica_id', 'tipologia_id');
+
+    }
 }

@@ -8,6 +8,7 @@ use App\Models\CupAnagIndirizzo;
 use App\Models\CupAnagNaturaGiuridica;
 use App\Models\CupAnagProfessione;
 use App\Models\CupAnagStatoCivile;
+use App\Models\CupAnagTipologiaAnagrafica;
 use App\Models\CupGeoComune;
 use App\Models\CupGeoNazione;
 use App\Models\Foto;
@@ -56,7 +57,12 @@ class CupAnagAnagrafica extends Breeze {
 
         'contatti' => [self::HAS_MANY, 'related' => CupAnagContatto::class, 'foreignKey' => 'anagrafica_id'],
         'indirizzi' => [self::HAS_MANY, 'related' => CupAnagIndirizzo::class, 'foreignKey' => 'anagrafica_id'],
-//        'tickets' => [self::HAS_MANY, 'related' => 'App\Models\Ticket'],
+        'raggruppamenti' => [self::BELONGS_TO_MANY, 'related' => CupAnagTipologiaAnagrafica::class,
+            'table' => 'cup_anag_raggruppamenti_anagrafiche',
+            'foreignPivotKey' => 'anagrafica_id',
+            'relatedPivotKey' => 'tipologia_id',
+        ],
+
     ];
 
     public $appends = [

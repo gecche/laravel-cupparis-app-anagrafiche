@@ -202,6 +202,7 @@ return [
             'pec' => [],
             'url' => [],
 
+            'iban' => [],
             'note' => [],
 //ALTRE INFO UTILI A UNA CERTA APP (JSON)
             'app_info' => [],
@@ -244,6 +245,14 @@ return [
                     'persona_contatto' => [],
                     'note' => [],
                 ]
+            ],
+            'raggruppamenti' => [
+                'fields' => [
+                    'id' => [],
+                    'nome_it' => [],
+                    'codice' => [],
+                ],
+                'options' => 'relation:raggruppamenti',
             ]
         ],
         'params' => [

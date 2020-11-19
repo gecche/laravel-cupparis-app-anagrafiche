@@ -75,6 +75,7 @@ class CreateCupAnagAnagraficheTable extends Migration
             $table->string('email')->nullable()->default(null);
             $table->string('pec')->nullable()->default(null);
             $table->string('url')->nullable()->default(null);
+            $table->string('iban',27)->nullable()->default(null);
 
             $table->text('note')->nullable()->default(null);
             //ALTRE INFO UTILI A UNA CERTA APP (JSON)
