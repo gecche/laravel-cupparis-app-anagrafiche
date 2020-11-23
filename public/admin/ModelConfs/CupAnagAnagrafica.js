@@ -395,7 +395,7 @@ var ModelCupAnagAnagrafica = {
                             methods: {
                                 getLabel: function (value) {
                                     var that = this;
-                                    //console.log('getLabel value',value);
+                                    console.log('getLabel value',value);
                                     if (!value || Object.keys(value).length == 0) {
                                         return 'Seleziona...';
                                     }

@@ -44,6 +44,7 @@ return [
         'email' => 'email',
         'pec' => 'pec',
         'url' => 'sito web',
+        'cell' => 'cell.',
 
         'note' => 'note',
 //ALTRE INFO UTILI A UNA CERTA APP (JSON)
@@ -55,6 +56,23 @@ return [
 
         'rapplegale_id' => 'rappresentante legale',
         'nazione_id' => 'nazione',
+
+        'contatti' => [
+                'tipo' => 'tipo',
+                'value' => 'valore',
+                'label' => 'etichetta',
+        ],
+        'indirizzi' => [
+            'tipologia_id' => 'tipo',
+            'indirizzo' => 'indirizzo',
+            'cap' => 'CAP',
+            'comune_id' => 'comune',
+
+            'localita' => 'località',
+            'numero_civico' => 'numero civico',
+            'persona_contatto' => 'persona di contatto',
+            'note' => 'note',
+        ],
     ],
     'relations' => [
         'nazionalita' => 'nazionalità|nazionalità',
@@ -65,6 +83,9 @@ return [
         'comunenascita' => 'comune di nascita|comuni di nascita',
         'naturagiuridica' => 'natura giuridica|nature giuridiche',
         'rapplegale_id' => 'rappresentante legale|rappresentanti legali',
+        'contatti' => 'contatto|contatti',
+        'indirizzi' => 'indirizzo|indirizzi',
+        'raggruppamenti' => 'raggruppamento|raggruppamenti',
     ],
     'list' => [],
     'insert' => [],
