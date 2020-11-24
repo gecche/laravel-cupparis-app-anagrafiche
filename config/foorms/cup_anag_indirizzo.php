@@ -57,10 +57,14 @@ return [
         'fields' => [
             'id' => [],
 
-            'tipologia_id' => [],
+            'tipologia_id' => [
+                'options' => 'relation:tipologia'
+            ],
             'indirizzo' => [],
             'cap' => [],
-            'comune_id' => [],
+            'comune_id' => [
+
+            ],
 
             'localita' => [],
             'numero_civico' => [],
@@ -76,6 +80,7 @@ return [
                 'fields' => [
                     'nome_it' => [],
                     'sigla_provincia' => [],
+                    'nazione_iso3' => [],
                 ]
             ],
             'tipologia' => [
@@ -99,7 +104,7 @@ return [
                         'result_fields' => [
                             'nome_it',
                             'sigla_provincia',
-                            'nazione|codice_iso_3',
+                            'nazione_iso3',
                         ]
                     ],
                 ],
@@ -108,10 +113,14 @@ return [
         'fields' => [
             'id' => [],
 
-            'tipologia_id' => [],
+            'tipologia_id' => [
+                'options' => 'relation:tipologia'
+            ],
             'indirizzo' => [],
             'cap' => [],
-            'comune_id' => [],
+            'comune_id' => [
+                'referred_data' => 'method:model',
+            ],
 
             'localita' => [],
             'numero_civico' => [],

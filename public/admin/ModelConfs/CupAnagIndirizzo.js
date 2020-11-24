@@ -52,7 +52,7 @@ var ModelCupAnagIndirizzo = {
             'tipologia_id',
             'indirizzo',
             'cap',
-            'comuneresidenza_id',
+            'comune_id',
 
             'localita',
             'numero_civico',
@@ -66,6 +66,39 @@ var ModelCupAnagIndirizzo = {
 
             'tipologia_id': {
                 type: 'w-select',
+            },
+
+            'comune_id': {
+                type: "w-b2-select2",
+                defaultValue: {
+                    id: -1,
+                    text: 'Seleziona...'
+                },
+                theme: 'bootstrap4',
+                allowClear: true,
+                foormName: 'cup_anag_indirizzo',
+                fieldName : 'comune_id',
+                viewType: 'edit',
+                labelFields: [
+                    'nome_it',
+                    'sigla_provincia',
+                    'nazione_iso3'
+                ],
+                // referredDataField : 'comune',
+                methods: {
+                    getLabel: function (value) {
+                        var that = this;
+                        console.log('getLabel value',value);
+                        if (!value || Object.keys(value).length == 0) {
+                            return 'Seleziona...';
+                        }
+                        return value['nome_it']
+                            + " (" + value['sigla_provincia'] + ")"
+                            + " - " + value['nazione_iso3'];
+                    },
+
+
+                },
             },
 
         }

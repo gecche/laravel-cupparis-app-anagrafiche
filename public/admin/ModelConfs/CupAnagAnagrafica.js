@@ -204,7 +204,7 @@ var ModelCupAnagAnagrafica = {
                 labelFields: [
                     'nome_it',
                     'sigla_provincia',
-                    'nazione|codice_iso_3'
+                    'nazione_iso3'
                 ],
                 //url : null,
                 methods: {
@@ -216,7 +216,7 @@ var ModelCupAnagAnagrafica = {
                         }
                         return value['nome_it']
                             + " (" + value['sigla_provincia'] + ")"
-                            + " - " + value['nazione|codice_iso_3'];
+                            + " - " + value['nazione_iso3'];
                         // codice originale
                         // var label = "";
                         // for (var i in that.fields) {
@@ -241,7 +241,7 @@ var ModelCupAnagAnagrafica = {
                 labelFields: [
                     'nome_it',
                     'sigla_provincia',
-                    'nazione|codice_iso_3'
+                    'nazione_iso3'
                 ],
                 methods: {
                     getLabel: function (value) {
@@ -252,7 +252,7 @@ var ModelCupAnagAnagrafica = {
                         }
                         return value['nome_it']
                             + " (" + value['sigla_provincia'] + ")"
-                            + " - " + value['nazione|codice_iso_3'];
+                            + " - " + value['nazione_iso3'];
                     },
 
 
@@ -283,7 +283,7 @@ var ModelCupAnagAnagrafica = {
                 //         }
                 //         return value['nome_it']
                 //             + " (" + value['sigla_provincia'] + ")"
-                //             + " - " + value['nazione|codice_iso_3'];
+                //             + " - " + value['nazione_iso3'];
                 //     },
                 //
                 //
@@ -389,7 +389,7 @@ var ModelCupAnagAnagrafica = {
                             labelFields: [
                                 'nome_it',
                                 'sigla_provincia',
-                                'nazione|codice_iso_3'
+                                'nazione_iso3'
                             ],
                             referredDataField : 'comune',
                             methods: {
@@ -401,7 +401,7 @@ var ModelCupAnagAnagrafica = {
                                     }
                                     return value['nome_it']
                                         + " (" + value['sigla_provincia'] + ")"
-                                        + " - " + value['nazione|codice_iso_3'];
+                                        + " - " + value['nazione_iso3'];
                                 },
 
 
@@ -488,7 +488,7 @@ var ModelCupAnagAnagrafica = {
                             labelFields: [
                                 'nome_it',
                                 'sigla_provincia',
-                                'nazione|codice_iso_3'
+                                'nazione_iso3'
                             ],
                             referredDataField : 'comune',
                             methods: {
@@ -500,7 +500,7 @@ var ModelCupAnagAnagrafica = {
                                     }
                                     return value['nome_it']
                                         + " (" + value['sigla_provincia'] + ")"
-                                        + " - " + value['nazione|codice_iso_3'];
+                                        + " - " + value['nazione_iso3'];
                                 },
 
 
