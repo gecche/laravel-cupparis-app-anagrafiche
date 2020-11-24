@@ -87,7 +87,7 @@ class AnagraficheServiceProvider extends ServiceProvider
         //Publishing and overwriting resources folders
         $this->publishes([
 //            __DIR__ . '/../resources/documenti' => base_path('resources/documenti'),
-//            __DIR__ . '/../resources/lang' => base_path('resources/lang'),
+            __DIR__ . '/../resources/lang' => base_path('resources/lang'),
 //            __DIR__ . '/../resources/views/bootstrap4/includes' => base_path('resources/views/bootstrap4/includes'),
         ], 'models-confs');
 
