@@ -59,7 +59,7 @@ var ModelCupAnagAnagrafica = {
             'comuneresidenza': {
                 type: 'w-belongsto',
                 labelFields: [
-                    'nome_id',
+                    'nome_it',
                     'sigla_provincia'
                 ],
             },
@@ -348,23 +348,34 @@ var ModelCupAnagAnagrafica = {
                     hasManyName : 'indirizzi',
                     langContext: 'cup_anag_anagrafica.fields.indirizzi',
                     fields: [
-                        'tipologia_id',
+                        'header',
+                        // 'tipologia',
                         'dati',
                     ],
                     fieldsConfig: {
-                        'tipologia_id': {
+                        'header': {
                             type: 'w-custom',
                             mounted : function() {
                                 var that = this;
-                                that.value = that.modelData.tipologia_id;
+                                that.value = that.modelData.tipologia.nome_it;
                             },
                             template: "tpl-list"
                         },
                         'dati': {
                             type: 'w-custom',
-                            mounted : function() {
+                            mounted : function () {
                                 var that = this;
-                                that.value = that.modelData.indirizzo;
+                                var html = '';
+
+                                html += '<span>' +
+                                    that.modelData.indirizzo + ' ' + that.modelData.numero_civico +
+                                    '<br/>' +
+                                    that.modelData.localita +
+                                    '<br/>' +
+                                    that.modelData.cap + ' ' + that.modelData.comune.nome_it
+                                '</span>';
+
+                                that.value = html;
                             },
                             template: "tpl-list"
                         },
